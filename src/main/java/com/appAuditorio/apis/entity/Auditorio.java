@@ -59,5 +59,5 @@ public class Auditorio implements Serializable {
     
     @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="audience")
     @JsonIgnoreProperties("audience")
-    private List<Reserva> reservations;
+    private List<Reservation> reservations;
 }
