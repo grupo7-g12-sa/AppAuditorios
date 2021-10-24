@@ -37,8 +37,8 @@ public class Calificacion implements Serializable {
     @Column(name="message", length=250)
     private String message;
     
-    @ManyToOne(optional=false)
+  /*  @ManyToOne(optional=false)
     @JoinColumn(name="Reserva_id", nullable=false)
     @JsonIgnoreProperties("score")
-    private Reserva reservation;
+    private Reserva reservation;*/
 }

@@ -1,5 +1,6 @@
 /*
- * Creación de entidad "Admin" y de tabla "Administrador"
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.appAuditorio.apis.entity;
 
@@ -16,25 +17,20 @@ import lombok.NoArgsConstructor;
 
 /**
  *
- * @author J. Sebastián Beltrán
+ * @author REIDEH
  */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="administrador")
-public class Admin implements Serializable {
-    @Id    
+@Table(name="message")
+public class Mensaje implements Serializable{
+    @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="id")
-    private int id;
+    @Column(name="idMessage")
+    private int idMessage;
     
-    @Column(name="name", nullable=false, length=250)
-    private String name;
-    
-    @Column(name="email", nullable=false, length=45)
-    private String email;
-    
-    @Column(name="password", nullable=false, length=45)
-    private String password;
+    @Column(name="messageText", nullable=false, length=250)
+    private String messageText;
 }

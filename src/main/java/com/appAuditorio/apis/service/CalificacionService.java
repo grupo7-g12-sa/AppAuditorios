@@ -53,7 +53,7 @@ public class CalificacionService {
          */
         califMod.setScore(calificacion.getScore());
         califMod.setMessage(calificacion.getMessage());
-        califMod.setReservation(calificacion.getReservation());
+        //califMod.setReservation(calificacion.getReservation());
         /**
          * Guardar los cambios en la tabla.
          */

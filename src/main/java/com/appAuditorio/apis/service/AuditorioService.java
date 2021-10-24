@@ -54,7 +54,7 @@ public class AuditorioService {
         auditorioMod.setName(auditorio.getName());
         auditorioMod.setCapacity(auditorio.getCapacity());
         auditorioMod.setDescription(auditorio.getDescription());
-        auditorioMod.setCategory(auditorio.getCategory());
+        auditorioMod.setCategory(auditorio.getCategory()); //sin relaciones en categoria
         
         /**
          * Guardar los cambios en la tabla auditorio.
@@ -70,8 +70,7 @@ public class AuditorioService {
      * @return un aviso de eliminado con el Id del auditorio eliminado.
      */
     public String deleteAuditorio(int id){
-        repositorioAud.deleteById(id);
-        
+        repositorioAud.deleteById(id);        
         return "Auditorio eliminado. Id: " + id;
     }
 }
