@@ -1,18 +1,17 @@
 /*
- * Creación de entidad "Auditorio" y de tabla "Auditorio"
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.appAuditorio.apis.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.io.Serializable;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,7 +21,7 @@ import lombok.NoArgsConstructor;
 
 /**
  *
- * @author J. Sebastián Beltrán
+ * @author REIDEH
  */
 
 @Data
@@ -30,8 +29,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name="audience")
-
-public class Auditorio implements Serializable {
+public class Audience {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id")
@@ -51,7 +50,7 @@ public class Auditorio implements Serializable {
     
     @ManyToOne//(optional=false)
   //  @JoinColumn(name="id", nullable=false)
-   // @JsonIgnoreProperties("audiences")
+    @JsonIgnoreProperties("audiences")
     private Category category;
     
     @OneToMany//(cascade={CascadeType.PERSIST}, mappedBy="audience")

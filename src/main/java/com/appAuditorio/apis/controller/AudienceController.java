@@ -1,10 +1,11 @@
 /*
- * Creación de API /Audience/ con peticiones GET, POST, PUT y DELETE.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.appAuditorio.apis.controller;
 
-import com.appAuditorio.apis.entity.Auditorio;
-import com.appAuditorio.apis.service.AuditorioService;
+import com.appAuditorio.apis.entity.Audience;
+import com.appAuditorio.apis.service.AudienceService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,23 +19,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author J. Sebastián Beltrán
+ * @author REIDEH
  */
 @RestController
-@RequestMapping("/api/Audience2")
-public class AuditorioController {
-    /**
+@RequestMapping("/api/Audience")
+public class AudienceController {
+     /**
      * Instancia de AuditorioService.
      */
     @Autowired
-    private AuditorioService servicioAud;
+    private AudienceService servicioAud;
     
+   
     /**
      * Petición GET para API Audience.
      * @return lista de auditorios encontrados.
      */
     @GetMapping("/all")
-    public List<Auditorio> getAllAuditorios(){
+    public List<Audience> getAllAuditorios(){
         return servicioAud.getAllAuditorios();
     }
     
@@ -44,7 +46,7 @@ public class AuditorioController {
      * @return código de estado de respuesta HTTP (201).
      */
     @PostMapping("/save")
-    public ResponseEntity saveAuditorio(@RequestBody Auditorio auditorio){
+    public ResponseEntity saveAuditorio(@RequestBody Audience auditorio){
         servicioAud.saveAuditorio(auditorio);
         
         return ResponseEntity.status(201).build();
@@ -56,7 +58,7 @@ public class AuditorioController {
      * @return código de estado de respuesta HTTP (201).
      */
     @PutMapping("/update")
-    public ResponseEntity updateAuditorio(@RequestBody Auditorio auditorio){
+    public ResponseEntity updateAuditorio(@RequestBody Audience auditorio){
         servicioAud.updateAuditorio(auditorio);
         
         return ResponseEntity.status(201).build();
@@ -68,7 +70,7 @@ public class AuditorioController {
      * @return código de estado de respuesta HTTP (204)
      */
     @DeleteMapping("/delete")
-    public ResponseEntity deleteAuditorio(@RequestBody Auditorio auditorio){
+    public ResponseEntity deleteAuditorio(@RequestBody Audience auditorio){
         servicioAud.deleteAuditorio(auditorio.getId());
         
         return ResponseEntity.status(204).build();
