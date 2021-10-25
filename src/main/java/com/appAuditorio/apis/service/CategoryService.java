@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author REIDEH
+ * @author Hedier Alvarez Ovalle Grupo 12
  */
 @Service
 public class CategoryService {
