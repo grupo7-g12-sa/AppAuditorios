@@ -11,9 +11,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -39,10 +38,10 @@ public class Mensaje implements Serializable{
     private String messageText;
     
     @ManyToOne //(cascade = {CascadeType.PERSIST},mappedBy="category")    
-    private Audience Audicences;
+    private Audience Audicence;
     
-   /* @OneToMany //(cascade = {CascadeType.PERSIST},mappedBy="category")    
-    private List<Client> Clients;*/
+    @ManyToOne //(cascade = {CascadeType.PERSIST},mappedBy="category")    
+    private Client Client;
     
 
 }
