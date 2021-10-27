@@ -53,7 +53,7 @@ public class ReservaService {
          */
         reservaMod.setStartDate(reserva.getStartDate());
         reservaMod.setDevolutionDate(reserva.getDevolutionDate());
-        reservaMod.setStatus(reserva.getStatus());       
+        //reservaMod.setStatus(reserva.getStatus());       
         
         /**
          * Guardar los cambios en la tabla.
