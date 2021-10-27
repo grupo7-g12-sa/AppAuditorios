@@ -5,11 +5,14 @@
 package com.appAuditorio.apis.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -38,6 +41,20 @@ public class Reserva implements Serializable{
     @Column(name="devolutionDate", nullable=false, length=450)
     private String devolutionDate;
     
-    @Column(name="status", nullable=false, length=450)
-    private String status;
+    //@Column(name="status", nullable=false, length=450)
+    //private String status;
+    
+    
+    @ManyToOne//(cascade={CascadeType.PERSIST}, mappedBy="audience")
+    //@JsonIgnoreProperties("audience")
+    @JoinColumn(name="id", nullable=false)
+    private Audience audience;
+    
+    @ManyToOne//(cascade={CascadeType.PERSIST}, mappedBy="audience")
+    //@JsonIgnoreProperties("audience")
+    @JoinColumn(name="idClient", nullable=false)
+    private Client client;
+    
+    
+    
 }
