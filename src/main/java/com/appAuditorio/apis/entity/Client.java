@@ -12,8 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -46,15 +46,9 @@ public class Client implements Serializable{
     @Column(name="age", nullable=false)
     private int age;
     
-   /* @OneToMany //(cascade = {CascadeType.PERSIST},mappedBy="category")
-    @JsonIgnoreProperties({"category","message"})
-    private List<Audience> Audiences;*/
-    
-    /*@OneToMany //(cascade = {CascadeType.PERSIST},mappedBy="category")    
-    private Mensaje Messages;*/
-    
-    @OneToMany//(cascade = {CascadeType.PERSIST},mappedBy="client")
-    //@JsonIgnoreProperties({"category","message"})
+       
+    @OneToMany//(cascade={CascadeType.PERSIST}, mappedBy="idMessage")
+    //@JsonIgnoreProperties({"messages"})    
     private List<Mensaje> Messages;
     
     @OneToMany //(cascade = {CascadeType.PERSIST},mappedBy="category")

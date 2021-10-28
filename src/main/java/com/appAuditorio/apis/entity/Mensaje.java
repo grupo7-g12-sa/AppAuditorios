@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -47,7 +48,8 @@ public class Mensaje implements Serializable{
     private List<Audience> Audicence;
     
     @ManyToOne //(cascade = {CascadeType.PERSIST},mappedBy="category")  
-    @JsonIgnoreProperties({"messages", "reservations"})
+    @JoinColumn(name="idClient", nullable=false) 
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client Client;
     
 
