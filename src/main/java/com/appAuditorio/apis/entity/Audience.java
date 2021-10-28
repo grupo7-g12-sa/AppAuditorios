@@ -59,7 +59,7 @@ public class Audience {
     //@JsonIgnoreProperties({"messages", "reservations"})
     private List<Mensaje> messages; 
     
-    //@OneToMany//(cascade={CascadeType.PERSIST}, mappedBy="audience")
+    @OneToMany//(cascade={CascadeType.PERSIST}, mappedBy="audience")
     //@JsonIgnoreProperties("audience")
-    //private List<Reserva> reservations;
+    private List<Reserva> reservations;
 }

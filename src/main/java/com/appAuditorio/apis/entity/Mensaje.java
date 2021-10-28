@@ -43,6 +43,7 @@ public class Mensaje implements Serializable{
     @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="id")
     //@JoinColumn(name="id", nullable=false)
     //@JoinColumn(name="id", nullable=false)    
+    @JsonIgnoreProperties({"reservations"})
     private List<Audience> Audicence;
     
     @ManyToOne //(cascade = {CascadeType.PERSIST},mappedBy="category")  

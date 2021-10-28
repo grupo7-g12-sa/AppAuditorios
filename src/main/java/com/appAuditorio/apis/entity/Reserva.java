@@ -4,8 +4,8 @@
  */
 package com.appAuditorio.apis.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -46,7 +46,7 @@ public class Reserva implements Serializable{
     
     
     @ManyToOne//(cascade={CascadeType.PERSIST}, mappedBy="audience")
-    //@JsonIgnoreProperties("audience")
+    @JsonIgnoreProperties("reservations")
     @JoinColumn(name="id", nullable=false)
     private Audience audience;
     
