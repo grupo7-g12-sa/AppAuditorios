@@ -6,7 +6,6 @@ package com.appAuditorio.apis.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,7 +52,15 @@ public class Audience {
     @JsonIgnoreProperties("audiences")
     private Category category;
     
-    @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="idMessage")
+    @OneToMany//(cascade={CascadeType.PERSIST}, mappedBy="audience")
+//    @JsonIgnoreProperties("messages")
+    private List<Mensaje> messages;
+    
+    @OneToMany//(cascade={CascadeType.PERSIST}, mappedBy="audience")
+    //@JsonIgnoreProperties("audience")
+    private List<Reserva> reservations;
+    
+   /* @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="idMessage")
     //@JsonIgnoreProperties({"client", "audience"})
     //@JoinColumn(name="idMessage", nullable=false)
     @JsonIgnoreProperties({"client", "audicence"})
@@ -61,5 +68,5 @@ public class Audience {
     
     @OneToMany//(cascade={CascadeType.PERSIST}, mappedBy="audience")
     //@JsonIgnoreProperties("audience")
-    private List<Reserva> reservations;
+    private List<Reserva> reservations;*/
 }

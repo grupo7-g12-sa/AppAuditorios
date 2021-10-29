@@ -40,6 +40,21 @@ public class Mensaje implements Serializable{
     @Column(name="messageText", nullable=false, length=250)
     private String messageText;
     
+    @ManyToOne//(cascade={CascadeType.PERSIST}, mappedBy="audience")
+    @JsonIgnoreProperties({"messages","reservations"})
+    @JoinColumn(name="id", nullable=false)
+    private Audience audience;
+    
+    @ManyToOne //(cascade = {CascadeType.PERSIST},mappedBy="category")  
+    @JoinColumn(name="idClient", nullable=false) 
+    @JsonIgnoreProperties({"messages","reservations"})
+    private Client Client;
+    
+    //@OneToMany//(cascade={CascadeType.PERSIST}, mappedBy="audience")
+    //@JsonIgnoreProperties("audience")
+   // private List<Reserva> reservations;
+    
+    /*
     //@ManyToOne //(cascade = {CascadeType.PERSIST},mappedBy="audicence")  
     @OneToMany(cascade={CascadeType.PERSIST}, mappedBy="id")
     //@JoinColumn(name="id", nullable=false)
@@ -51,6 +66,6 @@ public class Mensaje implements Serializable{
     @JoinColumn(name="idClient", nullable=false) 
     @JsonIgnoreProperties({"messages","reservations"})
     private Client Client;
-    
+    */
 
 }
