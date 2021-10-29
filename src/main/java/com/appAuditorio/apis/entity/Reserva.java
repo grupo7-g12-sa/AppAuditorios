@@ -6,6 +6,7 @@ package com.appAuditorio.apis.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,14 +36,14 @@ public class Reserva implements Serializable{
     @Column(name="idReservation")
     private int idReservation;
     
-    @Column(name="startDate", nullable=false, length=450)
-    private String startDate;
+    //@Column(name="startDate", nullable=false, length=450)
+    private Date startDate;
     
-    @Column(name="devolutionDate", nullable=false, length=450)
-    private String devolutionDate;
+    //@Column(name="devolutionDate", nullable=false, length=450)
+    private Date devolutionDate;
     
     //@Column(name="status", nullable=false, length=450)
-    //private String status;
+    private String status="created";
     
     
     @ManyToOne//(cascade={CascadeType.PERSIST}, mappedBy="audience")
@@ -60,6 +61,8 @@ public class Reserva implements Serializable{
     //@JsonIgnoreProperties("reservations")
     //@JoinColumn(name="id", nullable=false)
     private Score score;
+    
+    
     
     
     
