@@ -56,7 +56,7 @@ public class AudienceService {
         auditorioMod.setName(auditorio.getName());
         auditorioMod.setCapacity(auditorio.getCapacity());
         auditorioMod.setDescription(auditorio.getDescription());
-        auditorioMod.setCategory(auditorio.getCategory()); //sin relaciones en categoria
+        //auditorioMod.setCategory(auditorio.getCategory()); //sin relaciones en categoria
         
         /**
          * Guardar los cambios en la tabla auditorio.
